@@ -6,7 +6,7 @@ import lombok.*;
 import telran.probes.dto.Range;
 import telran.probes.dto.SensorRange;
 
-@Document(collection = "sensor-range")
+@Document(collection = "sensor_range")
 @Getter
 @ToString
 @NoArgsConstructor

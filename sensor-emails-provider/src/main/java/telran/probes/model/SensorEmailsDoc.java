@@ -9,7 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 import telran.probes.dto.SensorEmails;
 
-@Document(collection = "sensor-emails")
+@Document(collection = "sensor_emails")
 @Getter
 @ToString
 @NoArgsConstructor
