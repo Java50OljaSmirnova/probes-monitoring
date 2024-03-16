@@ -55,7 +55,7 @@ public class AdminConsoleServiceImpl implements AdminConsoleService {
 		long sensorId = sensorRange.id();
 		Range range = sensorRange.range();
 		Update update = new Update();
-		update.push("range", range);
+		update.set("range", range);
 		Query query = new Query(Criteria.where("sensorId").is(sensorId));
 		SensorRangeDoc sensorRangeRes = mongoTemplate.findAndModify(query, update, options, SensorRangeDoc.class);
 		if(sensorRangeRes == null) {
@@ -72,7 +72,7 @@ public class AdminConsoleServiceImpl implements AdminConsoleService {
 		long sensorId = sensorEmails.id();
 		String[] emails = sensorEmails.mails();
 		Update update = new Update();
-		update.push("emails", emails);
+		update.set("emails", emails);
 		Query query = new Query(Criteria.where("sensorId").is(sensorId));
 		SensorEmailsDoc sensorEmailsRes = mongoTemplate.findAndModify(query, update, options, SensorEmailsDoc.class);
 		if(sensorEmailsRes == null) {
