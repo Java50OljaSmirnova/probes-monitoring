@@ -10,8 +10,9 @@
 	<artifactId>admin-console</artifactId>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>telran.exceptions</groupId>
+			<artifactId>web-exceptions</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -22,21 +23,6 @@
 			<artifactId>de.flapdoodle.embed.mongo.spring30x</artifactId>
 			<version>4.11.0</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>telran.exceptions</groupId>
-			<artifactId>web-exceptions</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>telran.probes</groupId>
-			<artifactId>sensor-emails-provider</artifactId>
-			<version>0.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>telran.probes</groupId>
-			<artifactId>sensor-range-provider</artifactId>
-			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 </project>
