@@ -6,10 +6,11 @@ import lombok.*;
 import telran.probes.dto.Range;
 import telran.probes.dto.SensorRange;
 
-@Document(collection = "sensor_ranges")
+@Document(collection="sensor_ranges")
 @Getter
-@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
 public class SensorRangeDoc {
 	@Id
 	long sensorId;
