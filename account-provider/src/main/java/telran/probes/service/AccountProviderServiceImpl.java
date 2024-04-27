@@ -19,7 +19,7 @@ public class AccountProviderServiceImpl implements AccountProviderService {
 	@Override
 	public AccountDto getAccount(String email) {
 		log.debug("AccountProviderService: received request for email {}", email);
-		Account account = accountRepo.findById(email).orElseThrow(() -> new AccountNotFoundException());
+		Account account = accountRepo.findById(email).orElseThrow(() -> new AccountNotFoundException(email));
 		return account.build();
 	}
 
