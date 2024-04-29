@@ -5,16 +5,16 @@
     <artifactId>probes-monitoring</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>account-provider</artifactId>
-  <dependencies>
-	  <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<dependency>
+  <artifactId>accounts-provider</artifactId>
+   <dependencies>
+   <dependency>
 			<groupId>telran.exceptions</groupId>
 			<artifactId>web-exceptions</artifactId>
 			<version>0.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>		
   </dependencies>
 </project>

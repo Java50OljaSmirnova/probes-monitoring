@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.4</version>
+		<version>3.2.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>telran.probes</groupId>
@@ -106,6 +106,7 @@
 		<module>sensor-emails-provider</module>
 		<module>probes</module>
 		<module>config-server</module>
-		<module>account-provider</module>
+		<module>gateway</module>
+		<module>accounts-provider</module>
 	</modules>
 </project>

@@ -1,5 +1,5 @@
 version: "3"
-services: 
+services:
    config-server:
       build:
          config-server
@@ -11,8 +11,7 @@ services:
             reservations:
                cpus: '0.3'
                memory: 250M
-      ports:
-         - 8888:8888
+     
    sensor-emails-provider:
       build:
          sensor-emails-provider
@@ -26,8 +25,7 @@ services:
                memory: 250M
       environment:
          - MONGO_PASSWORD=${MONGO_PASSWORD} 
-      ports:
-         - 8282:8282     
+          
    sensor-range-provider:
       build:
          sensor-range-provider
@@ -41,8 +39,21 @@ services:
                memory: 250M
       environment:
          - MONGO_PASSWORD=${MONGO_PASSWORD}
-      ports:
-         - 8585:8585
+         
+   accounts-provider:
+      build:
+         accounts-provider
+      deploy:
+         resources:
+            limits:
+               cpus: '0.5'
+               memory: 300M
+            reservations:
+               cpus: '0.3'
+               memory: 250M 
+      environment:
+         - MONGO_PASSWORD=${MONGO_PASSWORD}
+               
    admin-console:
       build:
          admin-console
@@ -57,8 +68,7 @@ services:
       environment:
          - MONGO_PASSWORD=${MONGO_PASSWORD}
          - STREAM_API_SECRET=${STREAM_API_SECRET}
-      ports:
-         - 9090:8080
+    
    analyzer:
       build:
          analyzer
@@ -72,6 +82,7 @@ services:
                memory: 250M
       environment:
          - STREAM_API_SECRET=${STREAM_API_SECRET}
+         
    avg-populator:
       build:
          avg-populator
@@ -86,6 +97,7 @@ services:
       environment:
          - MONGO_PASSWORD=${MONGO_PASSWORD}
          - STREAM_API_SECRET=${STREAM_API_SECRET}
+         
    avg-reducer:
       build:
          avg-reducer
@@ -100,6 +112,7 @@ services:
       environment:
          - REDIS_PASSWORD=${REDIS_PASSWORD}
          - STREAM_API_SECRET=${STREAM_API_SECRET}
+         
    email-notifier:
       build:
          email-notifier
@@ -115,3 +128,17 @@ services:
          - MAIL_PASSWORD=${MAIL_PASSWORD}
          - MAIL_USER_NAME=${MAIL_USER_NAME}
          - STREAM_API_SECRET=${STREAM_API_SECRET}
+         
+   gateway:
+      build:
+         gateway
+      deploy:
+         resources:
+            limits:
+               cpus: '0.5'
+               memory: 300M
+            reservations:
+               cpus: '0.3'
+               memory: 250M 
+      ports:
+      - 9595:9595
